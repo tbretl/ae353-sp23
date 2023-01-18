@@ -1,0 +1,29 @@
+---
+---
+
+// Headers
+$header-heading-color: #13294B !default;
+$header-bg-color: #FF552E !default;
+$header-bg-color-secondary: #F8FAFC !default;
+
+// Text
+$section-headings-color: #FF552E !default;
+$body-text-color: #13294B !default;
+$body-link-color: #009FD4 !default;
+$blockquote-text-color: #4D69A0 !default;
+
+$hr-border-color: #000000 !default;
+
+@import "{{ site.theme }}";
+
+.btn {
+    color: #13294B;
+    border-color: #13294B;
+    background-color: #F8FAFC;
+}
+
+.btn:hover {
+    color: #F8FAFC;
+    border-color: #13294B;
+    background-color: #13294B;
+}
