@@ -13,8 +13,6 @@ description: The course website for Aerospace Control Systems
 
 ---
 
-**UNDER CONSTRUCTION!**
-
 ## Instructor
 
 Prof. Timothy Bretl
@@ -25,13 +23,15 @@ Prof. Timothy Bretl
     * TBD
 
 
-## Teaching Assistant
+## Teaching Assistants
 
-TBD
-* Email: TBD
-* Phone: TBD
-* Office Hours:
-    * TBD
+Christoph Aoun
+* Email: <caoun2@illinois.edu>
+* Office Hours: TBD
+
+Grayson Schaer
+* Email: <gschaer2@illinois.edu>
+* Office Hours: TBD
 
 
 ## Time and Place
@@ -62,7 +62,7 @@ There is no required textbook.
 
 ## Homework
 
-You will complete a homework assignment after (nearly) every lecture using [PrairieLearn](https://www.prairielearn.org/pl/course_instance/129078).
+You will complete many short homework assignments using [PrairieLearn](https://us.prairielearn.com/pl/course_instance/130996).
 
 ## Exams
 
@@ -111,37 +111,13 @@ You may be given opportunities to earn extra credit on various assignments. This
 
 ## Time Management
 
-You will earn three credit hours for completing this course. The [federal definition of a "credit hour"](https://provost.illinois.edu/policies/policies/courses/credit-hour-definition/) is an amount of work that reasonably approximates not less than one hour of instruction and two hours of out-of-class student work each week throughout the semester. Therefore, each of you should expect to spend about nine hours on this course each week, including the time you spend in lecture. If you are struggling with time management, please **ask one of us for help**.
+You will earn three credit hours for completing this course. The [federal definition of a "credit hour"](https://provost.illinois.edu/policies/policies/courses/credit-hour-definition/) is an amount of work that reasonably approximates not less than one hour of instruction and two hours of out-of-class student work each week throughout the semester. Therefore, each of you should expect to spend about nine hours on this course each week, including the time you spend in lecture. If you find yourself spending much less or much more time and are struggling with time management, please **ask one of us for help**.
 
 ## Academic Integrity
 
 You are encouraged to talk with all of your colleagues about all of your work this semester, so long as you acknowledge and cite the people with whom you talked. Materials submitted must be your own --- please refer to the [student code](https://studentcode.illinois.edu/) for a definition of [plagiarism](https://studentcode.illinois.edu/article1/part4/1-402/), which is an academic integrity infraction. Academic integrity allegations like plagiarism will be reported using the Faculty Academic Integrity Reporting (FAIR) system. Confirmed infractions may result in a zero grade for the corresponding assignment and, in some cases, a failing grade for the course. If you are unsure of what constitutes plagiarism or any other breach of academic integrity, please **ask one of us for help**.
 
 ---
-
-## COVID
-
-[[source]](https://covid19.illinois.edu/on-campus/on-campus-instructors/)
-
-##### General Expectations
-
-Following University policy, all students are required to engage in appropriate behavior to protect the health and safety of the community. Students are also required to follow the campus COVID-19 protocols.
-
-Students who feel ill must not come to class. In addition, students who test positive for COVID-19 or have had an exposure that requires testing and/or quarantine must not attend class. The University will provide information to the instructor, in a manner that complies with privacy laws, about students in these latter categories. These students are judged to have excused absences for the class period and should contact the instructor via email about making up the work.     
-
-Students who fail to abide by these rules will first be asked to comply; if they refuse, they will be required to leave the classroom immediately. If a student is asked to leave the classroom, the non-compliant student will be judged to have an unexcused absence and reported to the Office for Student Conflict Resolution for disciplinary action. Accumulation of non-compliance complaints against a student may result in dismissal from the University.
-
-##### Face Coverings
-
-All students, faculty, staff, and visitors are required to wear face coverings in classrooms and university spaces. This is in accordance with CDC guidance and University policy and expected in this class.
-
-Please refer to the University of Illinois Urbana-Champaign’s COVID-19 website for [further information on face coverings](https://covid19.illinois.edu/health-and-support/face-coverings/). Thank you for respecting all of our well-being so we can learn and interact together productively.
-
-##### Building Access
-
-In order to implement COVID-19-related guidelines and policies affecting university operations, instructional faculty members may ask students in the classroom to show their Building Access Status in the Safer Illinois app or the Boarding Pass. Staff members may ask students in university offices to show their Building Access Status in the Safer Illinois app or the Boarding Pass. If the Building Access Status says "Granted," that means the individual is compliant with the university’s COVID-19 policies --- either with a university-approved COVID-19 vaccine or with the on-campus COVID-19 testing program for unvaccinated students.
-
-Students are required to show only the Building Access Screen, which shows compliance without specifying whether it was through COVID-19 vaccination or regular on-campus testing. To protect personal health information, this screen does not say if a person is vaccinated or not. Students are not required to show anyone the screen that displays their vaccination status. No university official, including faculty members, may ask students why they are not vaccinated or any other questions seeking personal health information.
 
 ## Anti-Racism and Inclusivity
 
@@ -168,6 +144,16 @@ Any student who has suppressed their directory information pursuant to Family Ed
 [[source]](https://wiki.illinois.edu/wiki/display/ugadvise/Syllabus+Statements)
 
 Illinois law requires the University to reasonably accommodate its students' religious beliefs, observances, and practices in regard to admissions, class attendance, and the scheduling of examinations and work requirements. You should examine this syllabus at the beginning of the semester for potential conflicts between course deadlines and any of your religious observances. If a conflict exists, you should notify your instructor of the conflict and follow the procedure at [https://odos.illinois.edu/community-of-care/resources/students/religious-observances/](https://odos.illinois.edu/community-of-care/resources/students/religious-observances/) to request appropriate accommodations. This should be done in the first two weeks of classes.
+
+## Sexual Misconduct Reporting Obligation
+
+[[source]](https://wiki.illinois.edu/wiki/display/ugadvise/Syllabus+Statements)
+
+The University of Illinois is committed to combating sexual misconduct. Faculty and staff members are required to report any instances of sexual misconduct to the University’s Title IX Office. In turn, an individual with the Title IX Office will provide information about rights and options, including accommodations, support services, the campus disciplinary process, and law enforcement options.
+
+A list of the designated University employees who, as counselors, confidential advisors, and medical professionals, do not have this reporting responsibility and can maintain confidentiality, can be found at [http://wecare.illinois.edu/resources/students/#confidential](http://wecare.illinois.edu/resources/students/#confidential).
+
+Other information about resources and reporting is available at [http://wecare.illinois.edu/](http://wecare.illinois.edu/).
 
 ## Emergency Response
 
