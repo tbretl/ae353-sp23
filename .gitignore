@@ -202,3 +202,11 @@ poetry.toml
 
 
 # End of https://www.toptal.com/developers/gitignore/api/macos,python
+
+#############################
+# Added by Bretl to avoid committing files for development
+
+do_not_commit
+
+#
+#############################
