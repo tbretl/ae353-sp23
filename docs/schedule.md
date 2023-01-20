@@ -17,6 +17,7 @@ description: What we will do from day to day
 
 #### Wednedsday, January 18 (Introduction)
 
+* Read the [syllabus](syllabus).
 * Follow the ["Setup" instructions](setup) so you can run course code on your own computer
 
 
