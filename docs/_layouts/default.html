@@ -49,13 +49,14 @@
     <!-- <a id="skip-to-content" href="#content">Skip to the content.</a> -->
 
     <header class="page-header" role="banner">
+
       <h1 class="project-name">AE353 (Spring 2023): {{ page.title | default: site.title | default: site.github.repository_name }}</h1>
       <h2 class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</h2>
 
       <a href="index" class="btn">Syllabus</a>
       <a href="schedule" class="btn">Schedule</a>
-      <!-- <a href="projects" class="btn">Projects</a>
-      <a href="reference" class="btn">Reference</a> -->
+      <!-- <a href="projects" class="btn">Projects</a> -->
+      <a href="reference" class="btn">Reference</a>
       <!-- <a href="development" class="btn">Development</a> -->
       <a href="setup" class="btn">Setup</a>
       <a href="{{ site.github.repository_url }}" class="btn">Code</a>
@@ -71,6 +72,12 @@
     </header>
 
     <main id="content" class="main-content" role="main">
+
+      <!-- <div class="alert alert-warning" role="alert">
+        <p>You are looking at the website for a prior offering of this course. Here is the current website:</p>
+        <p class="text-center"><a href="https://tbretl.github.io/ae353-sp23">https://tbretl.github.io/ae353-sp23</a></p>
+      </div> -->
+
       {{ content }}
 
       <footer class="site-footer">
