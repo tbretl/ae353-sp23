@@ -18,14 +18,15 @@ description: What we will do from day to day
 #### Wednedsday, January 18 (Introduction)
 
 * Read the [syllabus](syllabus).
-* Follow the ["Setup" instructions](setup) so you can run course code on your own computer
+* Follow the ["Setup" instructions](setup) so you can run course code on your own computer.
 
 
 #### Friday, January 20 (PID controllers)
 
-* Complete [HW1 in PrairieLearn](https://us.prairielearn.com/pl/course_instance/130996/assessment/2327509)
-* Fill out [this form to express group preferences for your first design project](https://forms.illinois.edu/sec/673116346)
-* (Optional) Read [Chapter 1.6 of the reference text (Feedback Systems)](http://www.cds.caltech.edu/~murray/books/AM08/pdf/fbs-intro_24Jul2020.pdf)
+* Fill out [this form to express group preferences for your first design project](https://forms.illinois.edu/sec/673116346).
+* Read [the reference page on PID](reference#pid).
+* (Optional) Read [Chapter 1.6 of the reference text (Feedback Systems)](http://www.cds.caltech.edu/~murray/books/AM08/pdf/fbs-intro_24Jul2020.pdf), or the whole of Chapter 1, for more information on PID controllers and on the idea of "control systems" in general.
+* Complete [HW1 in PrairieLearn](https://us.prairielearn.com/pl/course_instance/130996/assessment/2327509).
 
 
 
