@@ -79,7 +79,7 @@ $$
 \frac{d z(t)}{dt} = e(t)
 $$
 
-with the boundary condition
+with the initial condition
 
 $$
 z(0) = 0.
