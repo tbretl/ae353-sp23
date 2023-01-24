@@ -110,6 +110,9 @@ class Simulator:
         # Maximum applied torque
         self.tau_max = tau_max
 
+        # Set mass of marker
+        self.bullet_client.changeDynamics(self.wheel_id, 2, mass=self.mass)
+
         # Initialize meshcat if necessary
         if self.display_meshcat:
             self.meshcat_init()
