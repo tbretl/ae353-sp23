@@ -122,15 +122,15 @@ class Simulator:
     
     def set_roll(self, roll):
         self.roll = roll
-        pybullet.resetBasePositionAndOrientation(
+        self.bullet_client.resetBasePositionAndOrientation(
             self.plane_id,
             np.array([0., 0., 0.]),
-            pybullet.getQuaternionFromEuler([0., self.roll, 0.]),
+            self.bullet_client.getQuaternionFromEuler([0., self.roll, 0.]),
         )
-        pybullet.resetBasePositionAndOrientation(
+        self.bullet_client.resetBasePositionAndOrientation(
             self.wheel_id,
             np.array([0., 0., 0.]),
-            pybullet.getQuaternionFromEuler([0., self.roll, 0.]),
+            self.bullet_client.getQuaternionFromEuler([0., self.roll, 0.]),
         )
         self.reset()
     
