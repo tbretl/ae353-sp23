@@ -28,11 +28,15 @@ Prof. Timothy Bretl
 
 Christoph Aoun
 * Email: <caoun2@illinois.edu>
-* Office Hours: TBD
+* Office Hours:
+    * 4:00pm - 5:00pm on Wednesday in Talbot 2nd floor lounge
+    * 12:30pm - 2:00pm on Thursday in Talbot 2nd floor lounge
 
 Grayson Schaer
 * Email: <gschaer2@illinois.edu>
-* Office Hours: TBD
+* Office Hours:
+    * 12:00pm - 2:00pm on Tuesdays in Talbot 321D (Aerolab)
+    * 4:00pm - 6:00pm on Fridays in Talbot 2nd floor lounge
 
 
 ## Time and Place
