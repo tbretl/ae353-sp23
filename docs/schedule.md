@@ -35,7 +35,7 @@ description: What we will do from day to day
 * Complete [HW2 in PrairieLearn](https://us.prairielearn.com/pl/course_instance/130996/assessment/2327697).
 
 
-#### Monday, January 25 (Simulation + Moving from PID to linear state feedback)
+#### Wednesday, January 25 (Simulation + Moving from PID to linear state feedback)
 
 * Contact [your partner for the first design project](https://campuswire.com/c/G9558828D/feed/33), arrange a time to meet, and make sure both of you have completed the ["Setup" instructions](setup) if you have not already done so.
 * Complete [HW3 in PrairieLearn](https://us.prairielearn.com/pl/course_instance/130996/assessment/2327910).
