@@ -40,6 +40,17 @@ description: What we will do from day to day
 * Contact [your partner for the first design project](https://campuswire.com/c/G9558828D/feed/33), arrange a time to meet, and make sure both of you have completed the ["Setup" instructions](setup) if you have not already done so.
 * Complete [HW3 in PrairieLearn](https://us.prairielearn.com/pl/course_instance/130996/assessment/2327910).
 
+#### Friday, January 27 (Implementation of linear state feedback)
+
+* Read the [guidelines for the first design project](https://tbretl.github.io/ae353-sp23/projects#design-project-1-cmg).
+* Complete [HW4 in PrairieLearn](https://us.prairielearn.com/pl/course_instance/130996/assessment/2327057).
+
+
+#### Monday, January 30 (Linearization to get a state space model)
+
+* Read the [notes on linearization from class](notes/20230130-linearization.pdf).
+* (Optional) Read [Chapter 6.4 of the reference text (Feedback Systems)](http://www.cds.caltech.edu/~murray/books/AM08/pdf/fbs-linsys_24Jul2020.pdf) for more information on linearization, including alternatives to "linearization about an equilibrium point."
+* Complete [HW5 in PrairieLearn](https://us.prairielearn.com/pl/course_instance/130996/assessment/2327058).
 
 
 # Examples
