@@ -127,14 +127,14 @@ There are many ways to go beyond minimum requirements (what happens if you chang
 
 Submit a first draft of your [report (see below for guidelines)](#final-report-by-1159pm-on-friday-february-17) that includes, at minimum, a complete "Theory" section. This draft must also include the appendix with your log of all work done so far by each group member.
 
-Upload it to the **DP1 Draft 1** group assignment on [Canvas](https://canvas.illinois.edu/courses/35036/).
+Upload it to the [**DP1 Draft 1** group assignment on Canvas](https://canvas.illinois.edu/courses/35036/assignments/668501).
 
 
 ##### Draft report with results (by 11:59pm on Friday, February 10)
 
 Submit a second draft of your [report (see below for guidelines)](#final-report-by-1159pm-on-friday-february-17) that includes, at minimum, a complete "Experimental methods" section and a complete "Results and discussion" section. This draft must also include the appendix with your log of all work done so far by each group member.
 
-Upload it to the **DP1 Draft 2** group assignment on [Canvas](https://canvas.illinois.edu/courses/35036/).
+Upload it to the [**DP1 Draft 2** group assignment on Canvas](https://canvas.illinois.edu/courses/35036/assignments/668502).
 
 
 ##### Final report (by 11:59pm on Friday, February 17)
@@ -169,9 +169,9 @@ The appendix, which does not count against your page limit, must have a table (w
 The appendix must also have a **team reflection** in which you summarize your experience working together on the project. What went well? How did you communicate? What might have helped your team be more productive?
 
 
-Submit your report by uploading it to the **DP1 Report** group assignment on [Canvas](https://canvas.illinois.edu/courses/35036/).
+Submit your report by uploading it to the [**DP1 Report** group assignment on Canvas](https://canvas.illinois.edu/courses/35036/assignments/668504).
 
-##### Final video (by 11:59pm on Friday, February 18)
+##### Final video (by 11:59pm on Friday, February 17)
 
 This video will satisfy the following requirements:
 
@@ -185,7 +185,7 @@ This video will satisfy the following requirements:
 * It must show at least one simulation of your working control system.
 * It must stay professional.
 
-Submit your video by uploading it to the [AE353 (Spring 2023) Project Videos]() channel on Illinois Media Space. Please take care to do the following:
+Submit your video by uploading it to the [AE353 (Spring 2023) Project Videos](https://mediaspace.illinois.edu/channel/channelid/289863252) channel on Illinois Media Space. Please take care to do the following:
 
 * Use the same descriptive title as your report, appended with your names in parentheses --- for example, "DP1: CMG control of a spacecraft (Tim Bretl and Jacob Kraft)".
 * Add the tag `dp1` (a **lower case** "dp" followed by the number "1"), so viewers can filter by project number.
@@ -194,7 +194,10 @@ You are welcome to resubmit your video at any time before the deadline. To do so
 
 We realize that 60 seconds is short! Think carefully about what to include (what to show and what to say) and anticipate the need for multiple "takes" and for time spent editing.
 
-##### Final code (by 11:59pm on Friday, February 18)
+Please also submit the URL for your video to the [**DP1 Video** group assignment on Canvas](https://canvas.illinois.edu/courses/35036/assignments/668534).
+
+
+##### Final code (by 11:59pm on Friday, February 17)
 
 This code will satisfy the following requirements:
 
@@ -202,7 +205,12 @@ This code will satisfy the following requirements:
 * It must not rely on any dependencies other than those associated with the [`ae353` conda environment](setup).
 * It must be organized and clearly documented, with a mix of markdown cells and inline comments.
 
-Submit your code by uploading it to the **DP1 Code** group assignment on [Canvas](https://canvas.illinois.edu/courses/35036/).
+Submit your code by uploading it to the [**DP1 Code** group assignment on Canvas](https://canvas.illinois.edu/courses/35036/assignments/668539). You will be asked to upload it in two formats — as the original `.ipynb` (so we can run your code) and as rendered `.html` (so we can see and comment on your code in Canvas). To get your notebook in `.html` format, you can do "File" > "Download as" > "HTML (.html)" from the jupyter browser window.
+
+
+##### Individual reflection (by 11:59pm on Monday, February 20)
+
+Complete the [**DP1 Reflection** assignment on Canvas](https://canvas.illinois.edu/courses/35036/assignments/668541) sometime between 3:00pm on Friday, February 17 and 11:59pm on Monday, February 20. This assignment, which should take no more than 10 or 15 minutes, will give you a chance to reflect on your experiences during this project and to identify things you may want to change for the next project.
 
 
 ### Evaluation
@@ -211,9 +219,10 @@ Your project grade will be weighted as follows:
 
 * (10%) Draft report with theory
 * (10%) Draft report with results
-* (50%) Final report
-* (20%) Final video
+* (48%) Final report
+* (18%) Final video
 * (10%) Final code
+* (4%) Individual reflection
 
 Rubrics will be discussed in class.
 
@@ -221,7 +230,7 @@ Rubrics will be discussed in class.
 
 ##### May I watch videos that are submitted by other students?
 
-Yes. All videos will be available in the [AE353 (Spring 2023) Project Videos]() channel on Illinois Media Space as soon as they are submitted by your colleagues (see the [Video](#final-video-by-1159pm-on-friday-february-17) deliverable). You may watch these videos whenever you want, even before you submit your own.
+Yes. All videos will be available in the [AE353 (Spring 2023) Project Videos](https://mediaspace.illinois.edu/channel/channelid/289863252) channel on Illinois Media Space as soon as they are submitted by your colleagues (see the [Video](#final-video-by-1159pm-on-friday-february-17) deliverable). You may watch these videos whenever you want, even before you submit your own.
 
 If you are inspired by a video, or if watching a video strongly influences the way you proceed with your own design project, then you must **acknowledge and cite** this video in your report (and in your own video, if appropriate). Failure to do so would be considered [plagiarism](https://studentcode.illinois.edu/article1/part4/1-402/).
 
