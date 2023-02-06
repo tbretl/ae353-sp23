@@ -406,9 +406,9 @@ $$
 The original system was nonlinear and the state space model is linear, so there *must* be some approximation here! As we will see, this approximation is good near the equilibrium point but can be very bad elsewhere.
 
 
-# The matrix exponential function
+## The matrix exponential function
 
-## What is the matrix exponential?
+### What is the matrix exponential?
 
 The **matrix exponential** of a square matrix $M$ is the infinite series
 
@@ -419,7 +419,7 @@ $$
 where $I$ is the identity matrix. This series converges for any square matrix $M$.
 
 
-## How do I use the matrix exponential to solve a linear system?
+### How do I use the matrix exponential to solve a linear system?
 
 The solution to the set of linear ODEs
 
@@ -454,7 +454,7 @@ $$ \begin{aligned} x(t_0) &= e^{F(t_0 - t_0)} x_0 \\ &= e^0 x_0 \\ &= I x_0 \\ &
 
 Again, it does. (We might wonder if this is the *only* solution to the original ODEs --- it is, although a proof would require more work.)
 
-## How do I use the matrix exponential to solve state space models?
+### How do I use the matrix exponential to solve state space models?
 
 Consider the state space model
 
@@ -521,9 +521,9 @@ The term $n_e$ is typically referred to as <strong>feedforward</strong> and the 
 </div>
 
 
-# Asymptotic stability
+## Asymptotic stability
 
-## What are eigenvalues and eigenvectors?
+### What are eigenvalues and eigenvectors?
 
 Consider a square matrix $F \in \mathbb{R}^{n \times n}$. If we can find a complex number $s \in \mathbb{C}$ and a non-zero, complex-valued vector $v \in \mathbb{C}^n$ that satisfy
 
@@ -547,7 +547,7 @@ $$ \begin{aligned} F (k v_i) &= k (F v_i) \\ &= k (s v_i) \\ &= s (k v_i). \end{
 
 Apparently, if $v_i$ is an eigenvector corresponding to $s_i$, then so is $k v_i$ for any $k \neq 0$. For this reason, algorithms to find eigenvectors typically *normalize* them to have unit length.
 
-## How do I diagonalize a square matrix?
+### How do I diagonalize a square matrix?
 
 Suppose we have found the eigenvalues $s_1, \dotsc, s_n$ and eigenvectors $v_1, \dotsc, v_n$ of a square matrix $F\in\mathbb{R}^{n \times n}$. Define the matrix
 
@@ -575,7 +575,7 @@ $$\text{diag} (s_1, \dotsc, s_n) = V^{-1} F V.$$
 
 In this case --- if all eigenvalues are distinct and so the matrix of eigenvectors is invertible --- we say that $F$ is **diagonalizable**. The process of "diagonalizing $F$" is finding the matrix $V$.
 
-## What is the matrix exponential of a diagonal matrix?
+### What is the matrix exponential of a diagonal matrix?
 
 It is easy to find the matrix exponential of a diagonal matrix, starting from [the definition](#what-is-the-matrix-exponential):
 
@@ -595,7 +595,7 @@ e^{\text{diag} (s_1, \dotsc, s_n)t}
 \end{align*}
 $$
 
-## What is the solution to a linear system that is diagonalizable?
+### What is the solution to a linear system that is diagonalizable?
 
 [We have seen](#how-do-i-use-the-matrix-exponential-to-solve-a-linear-system) that the solution to
 
@@ -664,7 +664,7 @@ where $m$ is an integer that is at most the multiplicity of the eigenvalue $s_i$
 
 See [the reference textbook](https://fbswiki.org/) for details.
 
-## When is a linear system asymptotically stable?
+### When is a linear system asymptotically stable?
 
 The system
 
