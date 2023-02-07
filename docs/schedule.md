@@ -67,9 +67,10 @@ description: What we will do from day to day
 * Read the [notes on the complete design process so far, from class](notes/20230203-design-process.pdf).
 * Complete [HW7 in PrairieLearn](https://us.prairielearn.com/pl/course_instance/130996/assessment/2327060).
 
-#### Monday, February 6 (Diagonalization)
+#### Monday, February 6 (Diagonalization, Part 1)
 
 * Re-read the reference page on [the matrix exponential function](reference#the-matrix-exponential-function) and on [asymptotic stability](reference#asymptotic-stability).
+* Read the [notes on diagonalization (part 1) from class](notes/20230206-diagonalization-part-1.pdf).
 * Complete [HW8 in PrairieLearn](https://us.prairielearn.com/pl/course_instance/130996/assessment/2327061).
 
 
