@@ -73,6 +73,22 @@ description: What we will do from day to day
 * Read the [notes on diagonalization (part 1) from class](notes/20230206-diagonalization-part-1.pdf).
 * Complete [HW8 in PrairieLearn](https://us.prairielearn.com/pl/course_instance/130996/assessment/2327061).
 
+#### Wednesday, February 8 (Diagonalization, Part 2)
+
+* Read the [notes on diagonalization (part 2) from class](notes/20230208-diagonalization-part-2.pdf).
+* Complete [HW9 in PrairieLearn](https://us.prairielearn.com/pl/course_instance/130996/assessment/2330822).
+
+#### Friday, February 10 (Exams, Projects)
+
+* Submit [DP1 Draft 2](https://tbretl.github.io/ae353-sp23/projects#draft-report-with-results-by-1159pm-on-friday-february-10) by midnight today.
+* Sign up for and take Exam 1 in the CBTF
+
+#### Monday, February 13 (No class)
+
+* Good luck on your exam! I will hold an extra office hour during our normal class time.
+
+
+
 
 # Examples
 
