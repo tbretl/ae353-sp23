@@ -14,6 +14,259 @@ description: How to get started on your design projects
 ---
 
 
+## Design Project \#2 (Differential-drive robot in artificial gravity)
+
+### System {#segbot-system}
+
+The second project that you will complete this semester is to design, implement, and test a controller that enables a client — who is not an engineer — to steer a differential-drive robot quickly and safely around obstacles as it moves along the inside of a rotating space station under artificial gravity while avoiding hazards, as pictured below:
+
+![Image of differential drive robot](./images/segbot1.png) ![Image of differential drive robot](./images/segbot2.png)
+
+This robot consists of a *chassis* (dark blue), a *left wheel* (orange), and a *right wheel* (also orange). It is called "differential-drive" because two separate motors allow a different torque to be applied to the left wheel and the right wheel:
+
+* If both wheels are rotating forward at the same rate, the robot moves straight.
+* If the left wheel is rotating forward faster than the right wheel, the robot turns right.
+* If the right wheel is rotating forward faster than the left wheel, the robot turns left.
+
+The client will be given an interface that allows them to specify where on the station ring — farther to the left or farther to the right — they would like the robot to go (this desired position is indicated by a yellow sphere). The job of your controller is to get the robot there while keeping it balanced upright.
+
+
+### Context {#segbot-context}
+
+A differential-drive transmission is a common design choice for mobile robots. For example, NASA used it in a prototype of [Robonaut](https://robonaut.jsc.nasa.gov/R1/sub/mobility.asp). You can read more about the reasons why in the textbook [Introduction to Autonomous Mobile Robots, Second Edition (Siegward, Nourbakhsh, and Scaramuzza, 2011)](https://mitpress.mit.edu/books/introduction-autonomous-mobile-robots-second-edition), also [available online](https://ieeexplore.ieee.org/book/6267528) (for free from the [library at Illinois](https://ieeexplore-ieee-org.proxy2.library.illinois.edu/servlet/opac?bknumber=6267528) and at other academic institutions). The two-wheeled, differential-drive design has, of course, also been popularized by [Segway](https://www.segway.com/robotics/commercial/).
+
+[Artificial gravity]((https://en.wikipedia.org/wiki/Artificial_gravity)) is one way to keep a mobile robot anchored to a space station. In particular, if the space station is rotation with angular velocity $\omega_\text{station}$ and if the radius of the station — the distance from the center of rotation to its inner surface — is $r_\text{station}$, then the robot will "feel" as if it were being pulled outward by gravity with acceleration equal to the centripetal accleration
+
+$$ g = r_\text{station}\omega_\text{station}^2. $$
+
+Artificial gravity is also one way to mitigate the health impacts of microgravity on human astronauts.  For example, astronauts lose more than 1% of mineral density in weight-bearing bones for each month they are in zero gravity (see [The Human Body in Space](https://www.nasa.gov/hrp/bodyinspace) for more information).
+
+Many [assessments of artificial gravity in space missions](https://ntrs.nasa.gov/api/citations/20070023306/downloads/20070023306.pdf) have been performed by NASA and others, resulting in concepts like [Nautilus-X](https://en.wikipedia.org/wiki/Nautilus-X) or the [Voyager Space Station](https://orbitalassembly.com/), a "space hotel" pictured below that may begin construction as early as 2026:
+
+![Image of voyager space station](./images/voyager.jpg)
+
+
+### Model {#segbot-model}
+
+If we assume (incorrectly) that the inside of the space station is *flat* and not *curved upward*, then the motion of the system is governed by ordinary differential equations with the following form (see [Studies of Systems with Nonholonomic Constraints: the Segway and the Chaplygin Sleigh (Tuttle, 2014)](https://docs.lib.purdue.edu/open_access_theses/386) for a derivation):
+
+$$\begin{bmatrix} \dot{e}_\text{lateral} \\ \dot{e}_\text{heading} \\ \dot{v} \\ \dot{w} \\ \ddot{\theta} \end{bmatrix} = f(e_\text{lateral}, e_\text{heading}, v, w, \theta, \dot{\theta}, \tau_R, \tau_L)$$
+
+The details of the function $f$ get a little complicated:
+
+$$
+\begin{bmatrix}v \sin{\left(e_\text{heading} \right)}\\w\\- \frac{2400 \tau_{L} + 2400 \tau_{R} + 2808 \left(\dot{\theta}^{2} + w^{2}\right) \sin{\left(\theta \right)} + 65 \left(50 \tau_{L} + 50 \tau_{R} - 39 w^{2} \sin{\left(2 \theta \right)} - 900 \sin{\left(\theta \right)}\right) \cos{\left(\theta \right)}}{11700 \cos^{2}{\left(\theta \right)} - 12168}\\\frac{32 \left(- 875 \tau_{L} + 875 \tau_{R} - 1443 \dot{\theta} w \sin{\left(2 \theta \right)} - 2925 v w \sin{\left(\theta \right)}\right)}{13 \left(3120 \sin^{2}{\left(\theta \right)} + 2051\right)}\\\frac{5 \left(8450 \tau_{L} + 8450 \tau_{R} - 6591 w^{2} \sin{\left(2 \theta \right)} + 60 \left(100 \tau_{L} + 100 \tau_{R} + 117 \left(\dot{\theta}^{2} + w^{2}\right) \sin{\left(\theta \right)}\right) \cos{\left(\theta \right)} - 152100 \sin{\left(\theta \right)}\right)}{1404 \left(25 \cos^{2}{\left(\theta \right)} - 26\right)}\end{bmatrix}
+$$
+
+So, you are encouraged to use the [symbolic description of these equations of motion]({{ site.github.repository_url }}/tree/main/projects/02_segbot/DeriveEOM-Template.ipynb) that is provided with the [project code]({{ site.github.repository_url }}/tree/main/projects/02_segbot) --- there is no need to transcribe them yourself.
+
+In these equations:
+
+* $e_\text{lateral}$ is the **lateral error** (m), or the distance from the center of the robot (more precisely, from the *wheel center*, or the point halfway between its two wheels) to a line that passes through the yellow sphere around the station ring --- if this quantity is positive, then the robot is too far to the left; if this quantity is negative, then the robot is too far to the right
+* $e_\text{heading}$ is the **heading error** (rad), or the difference between the orientation of the robot and the direction of the station ring --- if this quantity is positive, then the robot is pointing to far to the left; if this quantity is negative, then the robot is pointing too far to the right
+* $v$ is the **forward speed** (m/s) --- positive means the robot is moving forward
+* $w$ is the **turning rate** (rad/s) --- positive means the robot is turning left
+* $\theta$ is the **pitch angle** (rad) --- positive means the chassis is pitching forward
+* $\dot{\theta}$ is the **pitch rate** (rad/s)
+* $\tau_R$ is the **right wheel torque** ($N\cdot\text{m}$) applied by the chassis to the right wheel --- positive torque will cause this wheel to rotate forward
+* $\tau_L$ is the **left wheel torque** ($N\cdot\text{m}$) applied by the chassis to the left wheel --- positive torque will cause this wheel to rotate forward
+
+Sensors provide measurements of all these variables (although these sensors do *not* provide any information about the station ring --- the extent to which it is curving upward or the location of obstacles, for example). Actuators allow you to choose what torques will be applied, up to a maximum of $\pm 1\;\text{N}\cdot\text{m}$.
+
+The code provided [here]({{ site.github.repository_url }}/tree/main/projects/02_segbot) simulates the motion of this system ([SegbotDemo]({{ site.github.repository_url }}/tree/main/projects/02_segbot/SegbotDemo-Template.ipynb)) and also derives the equations of motion in symbolic form ([DeriveEOM]({{ site.github.repository_url }}/tree/main/projects/02_segbot/DeriveEOM.ipynb)).
+
+The goal is to design a controller that enables a client who is not an engineer to steer the robot as fast as possible around the ring of the space station without causing it to fall off the edge or to hit any obstacles.
+
+
+### Your tasks {#segbot-your-tasks}
+
+In this project, we would like you to be more specific about what you mean by "success" and to provide quantitative evidence supporting the claim that you have (or have not) succeeded. People often think about this in terms of **requirements** and **verifications**.
+
+#### What is a requirement?
+
+A **requirement** is a property that the system you are designing must have in order to solve your problem (i.e., a thing that needs to get done). A good requirement is quantifiable---it involves a number that must be within a certain range in order to solve your design problem. A good requirement is also both relevant (it *must* be satisfied---it is not optional) and detailed (it can be read and understood by anyone). Here is an example of a requirement that says what needs to get done but that most engineers would consider unacceptable:
+
+> The robot shall move along the ring.
+
+This requirement is not detailed. One way to improve it would be to say what it means to move along the ring:
+
+> The wheel center shall remain close to the centerline of the ring.
+
+This requirement is not quantifiable. One way to improve it would be to say how close:
+
+> The wheel center shall remain within $\pm 0.1~\text{meters}$ of the ring centerline.
+
+Most engineers would argue that this requirement still needs improvement. How long must the wheel center remain close to the centerline of the ring? Is there an upper bound on the time it must take for the wheel center to get close to the centerline of the ring, assuming it starts somewhere else? Must this requirement be satisfied only if the station is spinning at its nominal rate, or must it be satisfied for any spin rate within certain bounds? Must this requirement be satisfied no matter what the initial conditions are? Or, are there particular operating conditions within which the requirement applies? How fast must the robot be moving along the ring? Must the robot remain upright and moving at all in order to satisfy this requirement, or can it fall over and remain still so long as its wheel center is near the centerline of the ring when it falls? These are examples of reasonable questions that might be asked by an engineer reviewing the requirement. Your task is to define *one* requirement---that is quantifiable, relevant, and detailed---that makes clear what the system you are designing must do in order for your goal to be achieved.
+
+#### What is a verification?
+
+A **verification** is a test that you will perform to make sure that the system you are designing meets a given requirement. A good verification is based on a measurement---it checks that a quantity is in the range specified by the requirement. A good verification also has a set of instructions for how to make the measurement (an experimental protocol) and for how to interpret the results (methods of data analysis and visualization that provide evidence the requirement has been met). Consider the requirement given above (which, as we have said, still needs improvement):
+
+> The wheel center shall remain within $\pm 0.1~\text{meters}$ of the ring centerline.
+
+Here is a verification of this requirement that most engineers would consider unacceptable:
+
+> The system will be tested in simulation.
+
+This verification is not based on a measurement. Here is a better version that *is* based on a measurement:
+
+> The error between the wheel center and the ring centerline will be found in simulation.
+
+This verification does not include a set of instructions for how to make the measurement or for how to interpret the results. Here is a better version that *does* include a set of instructions:
+
+> PyBullet will be be used to simulate the robot. The data generated by this simulation will be imported into a Jupyter Notebook for analysis with Python. The lateral error --- the perpendicular distance between the wheel center and the ring centerline --- will be found at each time step. The maximum absolute value of lateral error over all time steps will be reported. If this maximum value is less than $0.1~\text{meters}$, the requirement is met.
+
+Most engineers would argue that this verification still needs improvement. For example, does the simulation generate the same results every time, or is there variation? Just as you saw on your first design project, it seems reasonable to suspect that different initial conditions will produce different results. A reasonable engineer, then, would question whether or not the results of only *one* simulation would really show that the requirement is met. Many verifications also provide more than just a single number as evidence---for example, they might produce a figure (e.g., a plot of error as a function of time) or some other type of visualization. Your task is to define *one* verification for your requirement that has a measurement and a set of instructions for how to make the measurement and how to interpret the results.
+
+#### What requirement and verification would be most relevant?
+
+Remember that your goal is to enable a non-expert to steer the robot safely around the station while avoiding obstacles. Think about requirements and verifications in terms of your client's needs. What must be satisfied by your control system to enable safe steering?
+
+
+#### Things you need to do {#to-do-segbot}
+
+Please do the following things:
+
+* Define a [requirement](#what-is-a-requirement) and a [verification](#what-is-a-verification).
+* Linearize the equations of motion.
+* Show that the linearized system is controllable.
+* Design a stable controller.
+* Implement this controller and test it in simulation.
+* Follow the instructions you wrote to verify that your requirement is (or is not) satisfied.
+
+As always, remember that your controller is not expected to "work" in all cases and that you should try hard to establish limits of performance (i.e., to break your controller). At minimum, you should rigorously vary the initial conditions, as you did in your first design project.
+
+Please also test the ability of at least one real person to steer the robot — with your controller — safely around the station ring. It would be best if this person were a real "non-expert" — someone not in your group, not in this class, and maybe outside the college of engineering!
+
+There are many ways to go beyond minimum requirements (how does the spin rate impact the performance of your controller? how fast is it possible to get the robot to move around the ring without it falling off, falling down, or hitting anything? how does performance vary with the choice of speed at which the robot tries to move?) — come talk to us if you want an extra challenge.
+
+
+### Your deliverables {#segbot-your-deliverables}
+
+Note that final deliverables are due **the day before spring break** - plan accordingly!
+
+##### Draft report with theory (by 11:59pm on Friday, February 24)
+
+Submit a first draft of your [report (see below for guidelines)](#final-report-by-1159pm-on-friday-march-10) that includes, at minimum, a complete "Theory" section. This draft must also include the appendix with your log of all work done so far by each group member.
+
+Upload it to the [**DP2 Draft 1** group assignment on Canvas](https://canvas.illinois.edu/courses/35036/assignments/668501).
+
+##### Draft report with results (by 11:59pm on Friday, March 3)
+
+Submit a second draft of your [report (see below for guidelines)](#final-report-by-1159pm-on-friday-march-10) that includes, at minimum, a complete "Experimental methods" section and a complete "Results and discussion" section. This draft must also include the appendix with your log of all work done so far by each group member.
+
+Upload it to the [**DP2 Draft 2** group assignment on Canvas](https://canvas.illinois.edu/courses/35036/assignments/668502).
+
+##### Final report (by 11:59pm on Friday, March 10)
+
+This report will satisfy the following requirements:
+
+* It must be a single PDF document that conforms to the guidelines for [Preparation of Papers for AIAA Technical Conferences](https://www.aiaa.org/events-learning/events/Technical-Presenter-Resources). In particular, you **must** use either the [Word](https://www.aiaa.org/docs/default-source/uploadedfiles/aiaa-forums-shared-universal-content/preparation-of-papers-for-technical-conferences.docx?sfvrsn=e9a97512_10) or [LaTeX](https://www.overleaf.com/latex/templates/latex-template-for-the-preparation-of-papers-for-aiaa-technical-conferences/rsssbwthkptn#.WbgUXMiGNPZ) manuscript template.
+* It must have a descriptive title that begins with "DP2" (e.g., "DP2: Control of a differential-drive robot in artificial gravity").
+* It must have a list of author names and affiliations.
+* It must contain the following sections:
+  * *Abstract.* Summarize your entire report in one short paragraph.
+  * *Nomenclature.* List all symbols used in your report, with units.
+  * *Introduction.* Prepare the reader to understand the rest of your report and how it fits within a broader context.
+  * *Theory.* Derive a model and do control design.
+  * *Experimental methods.* Describe the experiments you performed in simulation in enough detail that they could be understood and repeated by a colleague. At minimum, this section should clearly define your [requirement](#what-is-a-requirement) and [verification](#what-is-a-verification).
+  * *Results and discussion.* Show the results of your experiments in simulation (e.g., with plots and tables) and discuss the extent to which they validate your control design - in particular, the extent to which they verify your requirement. As always, remember to [focus on establishing limits of performance](#segbot-your-tasks).
+  * *Conclusion.* Summarize key conclusions and identify ways that others could improve or build upon your work.
+  * *Acknowledgements.* Thank anyone outside your group with whom you discussed this project and clearly describe what you are thanking them for.
+  * *References.* Cite any sources, including the work of your colleagues.
+  * *Appendix.* See below.
+* It must be a maximum of 6 pages.
+
+The appendix, which does not count against your page limit, must have a table (with as many rows as necessary) that logs all of the work done by each group member on the project:
+
+| Day | Task | Person or People |
+| :-: | :-: | :-: |
+| | | |
+| | | |
+
+<br>
+
+The appendix must also have a **team reflection** in which you summarize your experience working together on the project. What went well? How did you communicate? What might have helped your team be more productive? 
+
+Submit your report by uploading it to the [**DP2 Report** group assignment on Canvas](https://canvas.illinois.edu/courses/35036/assignments/668504).
+
+
+##### Final video (by 11:59pm on Friday, March 10)
+
+This video will satisfy the following requirements:
+
+* It must be 70 seconds in length.
+* The first and last 5 seconds must include text with a descriptive title (the same title as your report), your names, and the following words somewhere in some order:
+  * AE353: Aerospace Control Systems
+  * Spring 2023
+  * Department of Aerospace Engineering
+  * University of Illinois at Urbana-Champaign
+* The middle 60 seconds must *clearly* communicate your methods and results to potential stakeholders. Who are you designing for? How will your controller help them?
+* It must show at least one example of a non-expert steering your robot around the station ring.
+* It must stay professional (use good sense, please).
+
+Submit your video by uploading it to the [AE353 (Spring 2022) Project Videos](https://mediaspace.illinois.edu/channel/channelid/245771012) channel on Illinois Media Space. Please take care to do the following:
+
+* Use the same descriptive title as your report, appended with your names in parentheses --- for example, "DP2: Control of a differential-drive robot in artificial gravity (Tim Bretl and Jacob Kraft)".
+* Add the tag `dp2` (a **lower case** "dp" followed by the number "2"), so viewers can filter by project number.
+
+You are welcome to resubmit your video at any time before the deadline. To do so, please "Edit" your **existing** video and then do "Replace Media". Please do **not** create a whole new submission.
+
+We realize that 60 seconds is short! Think carefully about what to include (what to show and what to say) and anticipate the need for multiple "takes" and for time spent editing.
+
+Please also submit the URL for your video to the [**DP2 Video** group assignment on Canvas](https://canvas.illinois.edu/courses/35036/assignments/668534).
+
+##### Final code (by 11:59pm on Friday, March 10)
+
+This code will satisfy the following requirements:
+
+* It must be a single jupyter notebook (with the extension `.ipynb`) that, if placed in the `projects/02_segbot` directory and run from start to finish, would reproduce *all* of the results that you show in your report.
+* It must not rely on any dependencies other than those associated with the [`ae353` conda environment](setup).
+* It must be organized and clearly documented, with a mix of markdown cells and inline comments.
+
+Submit your code by uploading it to the [**DP2 Code** group assignment on Canvas](https://canvas.illinois.edu/courses/35036/assignments/668539). You will be asked to upload it in two formats — as the original `.ipynb` (so we can run your code) and as rendered `.html` (so we can see and comment on your code in Canvas). To get your notebook in `.html` format, you can do "File" > "Download as" > "HTML (.html)" from the jupyter browser window.
+
+##### Individual reflection (by 11:59pm on Monday, March 20)
+
+Complete the [**DP2 Reflection** assignment on Canvas](https://canvas.illinois.edu/courses/35036/assignments/668541) sometime between 3:00pm on Friday, March 10 and 11:59pm on Monday, March 20. This assignment, which should take no more than 10 or 15 minutes, will give you a chance to reflect on your experiences during this project and to identify things you may want to change for the next project.
+
+
+### Evaluation
+
+Your project grade will be weighted as follows:
+
+* (10%) Draft report with theory
+* (10%) Draft report with results
+* (48%) Final report
+* (18%) Final video
+* (10%) Final code
+* (4%) Individual reflection
+
+Rubrics will be discussed in class.
+
+### Frequently asked questions
+
+##### May I watch videos that are submitted by other students?
+
+Yes. All videos will be available in the [AE353 (Spring 2023) Project Videos](https://mediaspace.illinois.edu/channel/channelid/289863252) channel on Illinois Media Space as soon as they are submitted by your colleagues (see the [Video](#final-video-by-1159pm-on-friday-march-10) deliverable). You may watch these videos whenever you want, even before you submit your own.
+
+If you are inspired by a video, or if watching a video strongly influences the way you proceed with your own design project, then you must **acknowledge and cite** this video in your report (and in your own video, if appropriate). Failure to do so would be considered [plagiarism](https://studentcode.illinois.edu/article1/part4/1-402/).
+
+
+##### How do I get started?
+
+The first thing you should do is [follow the instructions to download and run course code](setup), verify that you can run the simulation, and mess around a little bit with different actuator commands (e.g., constant wheel torques) to get a sense for how the system responds.
+
+After that, if you have read the entire [project description](#design-project-2-differential-drive-robot-in-artificial-gravity) and are not sure how to proceed, then take your best guess and ask a question on [Campuswire](https://campuswire.com/c/G9558828D/). Improving your ability to get unstuck by asking a good question is an explicit goal of this course.
+
+
+
+
+
+
+
+
+
 ## Design Project \#1 (CMG)
 
 ### System {#cmg-system}
@@ -178,7 +431,7 @@ This video will satisfy the following requirements:
 * It must be 70 seconds in length.
 * The first and last 5 seconds must include text with a descriptive title (the same title as your report), your names, and the following words somewhere in some order:
   * AE353: Aerospace Control Systems
-  * Spring 2022
+  * Spring 2023
   * Department of Aerospace Engineering
   * University of Illinois at Urbana-Champaign
 * The middle 60 seconds must *clearly* communicate your methods and results to potential stakeholders. Who are you designing for? How will your controller help them?
