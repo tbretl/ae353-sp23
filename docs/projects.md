@@ -149,13 +149,13 @@ Note that final deliverables are due **the day before spring break** - plan acco
 
 Submit a first draft of your [report (see below for guidelines)](#final-report-by-1159pm-on-friday-march-10) that includes, at minimum, a complete "Theory" section. This draft must also include the appendix with your log of all work done so far by each group member.
 
-Upload it to the [**DP2 Draft 1** group assignment on Canvas](https://canvas.illinois.edu/courses/35036/assignments/668501).
+Upload it to the [**DP2 Draft 1** group assignment on Canvas](https://canvas.illinois.edu/courses/35036/assignments/676852).
 
 ##### Draft report with results (by 11:59pm on Friday, March 3)
 
 Submit a second draft of your [report (see below for guidelines)](#final-report-by-1159pm-on-friday-march-10) that includes, at minimum, a complete "Experimental methods" section and a complete "Results and discussion" section. This draft must also include the appendix with your log of all work done so far by each group member.
 
-Upload it to the [**DP2 Draft 2** group assignment on Canvas](https://canvas.illinois.edu/courses/35036/assignments/668502).
+Upload it to the [**DP2 Draft 2** group assignment on Canvas](https://canvas.illinois.edu/courses/35036/assignments/676853).
 
 ##### Final report (by 11:59pm on Friday, March 10)
 
@@ -188,7 +188,7 @@ The appendix, which does not count against your page limit, must have a table (w
 
 The appendix must also have a **team reflection** in which you summarize your experience working together on the project. What went well? How did you communicate? What might have helped your team be more productive? 
 
-Submit your report by uploading it to the [**DP2 Report** group assignment on Canvas](https://canvas.illinois.edu/courses/35036/assignments/668504).
+Submit your report by uploading it to the [**DP2 Report** group assignment on Canvas](https://canvas.illinois.edu/courses/35036/assignments/676855).
 
 
 ##### Final video (by 11:59pm on Friday, March 10)
@@ -214,7 +214,7 @@ You are welcome to resubmit your video at any time before the deadline. To do so
 
 We realize that 60 seconds is short! Think carefully about what to include (what to show and what to say) and anticipate the need for multiple "takes" and for time spent editing.
 
-Please also submit the URL for your video to the [**DP2 Video** group assignment on Canvas](https://canvas.illinois.edu/courses/35036/assignments/668534).
+Please also submit the URL for your video to the [**DP2 Video** group assignment on Canvas](https://canvas.illinois.edu/courses/35036/assignments/676856).
 
 ##### Final code (by 11:59pm on Friday, March 10)
 
@@ -224,11 +224,11 @@ This code will satisfy the following requirements:
 * It must not rely on any dependencies other than those associated with the [`ae353` conda environment](setup).
 * It must be organized and clearly documented, with a mix of markdown cells and inline comments.
 
-Submit your code by uploading it to the [**DP2 Code** group assignment on Canvas](https://canvas.illinois.edu/courses/35036/assignments/668539). You will be asked to upload it in two formats — as the original `.ipynb` (so we can run your code) and as rendered `.html` (so we can see and comment on your code in Canvas). To get your notebook in `.html` format, you can do "File" > "Download as" > "HTML (.html)" from the jupyter browser window.
+Submit your code by uploading it to the [**DP2 Code** group assignment on Canvas](https://canvas.illinois.edu/courses/35036/assignments/676851). You will be asked to upload it in two formats — as the original `.ipynb` (so we can run your code) and as rendered `.html` (so we can see and comment on your code in Canvas). To get your notebook in `.html` format, you can do "File" > "Download as" > "HTML (.html)" from the jupyter browser window.
 
 ##### Individual reflection (by 11:59pm on Monday, March 20)
 
-Complete the [**DP2 Reflection** assignment on Canvas](https://canvas.illinois.edu/courses/35036/assignments/668541) sometime between 3:00pm on Friday, March 10 and 11:59pm on Monday, March 20. This assignment, which should take no more than 10 or 15 minutes, will give you a chance to reflect on your experiences during this project and to identify things you may want to change for the next project.
+Complete the [**DP2 Reflection** assignment on Canvas](https://canvas.illinois.edu/courses/35036/assignments/676854) sometime between 3:00pm on Friday, March 10 and 11:59pm on Monday, March 20. This assignment, which should take no more than 10 or 15 minutes, will give you a chance to reflect on your experiences during this project and to identify things you may want to change for the next project.
 
 
 ### Evaluation
