@@ -29,14 +29,32 @@ Prof. Timothy Bretl
 Christoph Aoun
 * Email: <caoun2@illinois.edu>
 * Office Hours:
-    * 4:00pm - 5:00pm on Wednesday in Talbot 206 (2nd floor lounge)
-    * 12:30pm - 2:00pm on Thursday in Talbot 206 (2nd floor lounge)
+    * 4:00pm - 5:00pm on Wednesdays in Talbot 206 (2nd floor lounge)
+    * 12:30pm - 2:00pm on Thursdays in Talbot 206 (2nd floor lounge)
 
 Grayson Schaer
 * Email: <gschaer2@illinois.edu>
 * Office Hours:
-    * 12:00pm - 2:00pm on Tuesdays in Talbot 321D (Aerolab)
+    * 12:00pm - 2:00pm on Tuesdays in Talbot 206 (2nd floor lounge)
     * 4:00pm - 6:00pm on Fridays in Talbot 206 (2nd floor lounge)
+
+
+## Course Assistants
+
+Matt Zollner
+* Office Hours:
+    * 5:00pm - 6:00pm on Wednesdays in Talbot 206 (2nd floor lounge)
+    * 6:00pm - 7:00pm on Fridays in Talbot 206 (2nd floor lounge)
+
+Anshuk Chigullapalli
+* Office Hours:
+    * 5:00 pm - 7:00 pm on Thursdays in Talbot 206 (2nd floor lounge)
+    * 7:00 pm - 8:00 pm on Fridays in Talbot 206 (2nd floor lounge)
+
+Parth Shrotri
+* Office Hours:
+    * 6:00pm - 7:00pm on Wednesdays in Talbot 206 (2nd floor lounge)
+    * 8:00pm - 9:00pm on Thursdays in Talbot 206 (2nd floor lounge)
 
 
 ## Time and Place
