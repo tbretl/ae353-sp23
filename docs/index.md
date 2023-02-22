@@ -42,17 +42,17 @@ Grayson Schaer
 ## Course Assistants
 
 Matt Zollner
-* Office Hours:
+* Help Sessions:
     * 5:00pm - 6:00pm on Wednesdays in Talbot 206 (2nd floor lounge)
     * 6:00pm - 7:00pm on Fridays in Talbot 206 (2nd floor lounge)
 
 Anshuk Chigullapalli
-* Office Hours:
+* Help Sessions:
     * 5:00 pm - 7:00 pm on Thursdays in Talbot 206 (2nd floor lounge)
     * 7:00 pm - 8:00 pm on Fridays in Talbot 206 (2nd floor lounge)
 
 Parth Shrotri
-* Office Hours:
+* Help Sessions:
     * 6:00pm - 7:00pm on Wednesdays in Talbot 206 (2nd floor lounge)
     * 8:00pm - 9:00pm on Thursdays in Talbot 206 (2nd floor lounge)
 
