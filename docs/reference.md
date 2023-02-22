@@ -1015,7 +1015,7 @@ There are three things to note:
 
 * $A$ and $B$ are things that you know — you have a description of the original system, as always — so you can compute $W$.
 
-* $A_\text{ccf}$ and $B_\text{ccf}$ are also things that you know — they are written in terms of the eigenvalues of the original system, which you can find from the matrix $A$ — so you can compute $W_\text{ccf}$.
+* $A_\text{ccf}$ and $B_\text{ccf}$ are also things that you know — the values $a_1, \dotsc, a_{n_x}$ in the top row of $A_\text{ccf}$ are the coefficients of the characteristic polynomial of the matrix $A$ — so you can compute $W_\text{ccf}$.
 
 * $W$ is a square $n_x \times n_x$ matrix — it has $n_x$ columns $B$, $AB$, and so forth, all of which have size $n_x \times 1$. So, if $W$ has non-zero determinant, then you can find its inverse.
 
