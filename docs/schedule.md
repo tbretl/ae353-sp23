@@ -15,7 +15,9 @@ description: What we will do from day to day
 
 # Things to do after each class
 
-#### Wednedsday, January 18 (Introduction)
+## Part 1 - Linearization and stability
+
+#### Wednesday, January 18 (Introduction)
 
 * Read the [syllabus](syllabus).
 * Follow the ["Setup" instructions](setup) so you can run course code on your own computer.
@@ -87,6 +89,36 @@ description: What we will do from day to day
 
 * Good luck on your exam! I will hold an extra office hour during our normal class time.
 
+## Part 2 - Controller design
+
+#### Wednesday, February 15 (Eigenvalue placement)
+
+* Read the [notes on eigenvalue placement from class](notes/20230215-placement.pdf).
+* Complete [HW10 in PrairieLearn](https://us.prairielearn.com/pl/course_instance/130996/assessment/2327062).
+* Fill out [this form to express group preferences for your second design project](https://forms.illinois.edu/sec/200984506).
+
+#### Friday, February 17 (Second design project)
+
+* Submit all [final deliverables for the first design project](projects#design-project-1-cmg).
+* Read the [guidelines for the second design project](projects#design-project-2-differential-drive-robot-in-artificial-gravity)
+* Contact [your partner for the second design project](https://campuswire.com/c/G9558828D/feed/148) and make a plan to get started.
+
+
+#### Monday, February 20 (Ackermann's method - theory)
+
+* Read the [notes on Ackermann's method (theory) from class](notes/20230220-acker.pdf).
+* Complete [HW11 in PrairieLearn](https://us.prairielearn.com/pl/course_instance/130996/assessment/2327063).
+
+#### Wednesday, February 22 (Ackermann's method - implementation + Controllability)
+
+* Read the [notes on Ackermann's method (implementation) and on controllability from class](notes/20230222-controllability.pdf).
+* Read the [reference page on eigenvalue placement](reference#eigenvalue-placement-by-controllable-canonical-form)
+* (Optional) Watch supplementary videos on Ackermann's method:
+    * [Ackermann's Method, Part 1 (Eigenvalues are invariant to coordinate transformation)](https://mediaspace.illinois.edu/media/t/1_93vewoav/)
+    * [Ackermann's Method, Part 2 (Controllable canonical form)](https://mediaspace.illinois.edu/media/t/1_rbf0x31w/)
+    * [Ackermann's Method, Part 3 (How to put a system in controllable canonical form)](https://mediaspace.illinois.edu/media/t/1_e6r6ljxc/)
+    * [Ackermann's Method, Part 4 (Putting it all together)](https://mediaspace.illinois.edu/media/t/1_sf1ydkq4/)
+* Complete [HW12 in PrairieLearn](https://us.prairielearn.com/pl/course_instance/130996/assessment/2327064).
 
 
 
