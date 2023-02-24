@@ -493,3 +493,36 @@ The first thing you should do is [follow the instructions to download and run co
 
 After that, if you have read the entire [project description](#design-project-1-cmg) and are not sure how to proceed, then take your best guess and ask a question on [Campuswire](https://campuswire.com/c/G9558828D/). Improving your ability to get unstuck by asking a good question is an explicit goal of this course.
 
+
+## Grading and revision policy for reports
+
+If you submit your report late, your grade will be reduced by 10% per 24 hours.
+
+If you submit a report that is not in AIAA format or that is more than 6 pages (not including the Appendix), you will be asked to revise and resubmit it before it is reviewed. Late penalties will be based on the time you resubmit your report.
+
+In general, your report will receive one of three grades:
+
+* An **unsatisfactory report** (75%) has all required elements but does not meet minimum standards. Either some or all concerns raised in the reviews of your two drafts have not been addressed, or you did not submit drafts that were complete enough to merit substantive feedback.
+
+* A **satisfactory report** (85%) has all required elements and meets minimum standards. Concerns raised in the reviews of your two drafts have been addressed. This is a solid effort of which you can be proud.
+
+* An **exemplary report** (95%) meets a professional standard. It is clear, has few or no mistakes, and describes work that I would share with my colleagues.
+
+If your report does not have all required elements or is otherwise unacceptable, then it will be graded differently and may receive a lower score.
+
+Optionally, after receiving feedback on your report, your team may submit a revised version no later than **3pm on May 3, 2023**. This revision must begin with a cover letter (as part of the same PDF) that describes what changes were made to the report:
+
+> \[Date\]
+> 
+> Dear Prof. Bretl,
+> 
+> Thank you for your feedback on our report for Design Project \[#1, #2, #3, #4\]. We received a grade of \[unsatisfactory, satisfactory, exemplary\]. Our revision contains the following changes in response to your feedback:
+> 
+> \[List of (1) concerns raised and (2) changes made in response to these concerns. Note that comments left as part of a review are rarely comprehensive — try to identify and address the concerns that motivated these comments rather than address each comment alone.\]
+> 
+> Sincerely,
+> \[Student Names\]
+
+Please submit this revised version by email to [Prof. Bretl](index#instructor) (cc-ing [Mr. Aoun and Mr. Schaer](index#teaching-assistants)).
+
+We will review your revision within three weeks of submission. We will not provide additional feedback on this revision and will tell you only if it merits a change in grade. This will only be the case if the revision is a significant improvement.
