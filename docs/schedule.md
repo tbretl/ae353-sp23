@@ -120,6 +120,19 @@ description: What we will do from day to day
     * [Ackermann's Method, Part 4 (Putting it all together)](https://mediaspace.illinois.edu/media/t/1_sf1ydkq4/)
 * Complete [HW12 in PrairieLearn](https://us.prairielearn.com/pl/course_instance/130996/assessment/2327064).
 
+#### Wednesday, February 24 (LQR introduction)
+
+* Read the [notes on LQR (introduction) from class](notes/20230224-lqr-intro.pdf).
+* Complete [HW13 in PrarieLearn](https://us.prairielearn.com/pl/course_instance/130996/assessment/2327065).
+
+#### Monday, February 27 (LQR problem statement)
+
+* Read the [notes on LQR (problem statement) from class](notes/20230227-lqr-problem.pdf).
+* Complete [HW14 in PrarieLearn](https://us.prairielearn.com/pl/course_instance/130996/assessment/2327066).
+
+#### Wednesday, March 1 (LQR details)
+
+* Read the [notes on LQR (details) from class](notes/20230301-lqr-details.pdf).
 
 
 # Examples
