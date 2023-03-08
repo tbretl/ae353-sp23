@@ -285,7 +285,7 @@ This video will satisfy the following requirements:
 * It must show at least one example of a non-expert steering your robot around the station ring.
 * It must stay professional (use good sense, please).
 
-Submit your video by uploading it to the [AE353 (Spring 2022) Project Videos](https://mediaspace.illinois.edu/channel/channelid/245771012) channel on Illinois Media Space. Please take care to do the following:
+Submit your video by uploading it to the [AE353 (Spring 2023) Project Videos](https://mediaspace.illinois.edu/channel/channelid/289863252) channel on Illinois Media Space. Please take care to do the following:
 
 * Use the same descriptive title as your report, appended with your names in parentheses --- for example, "DP2: Control of a differential-drive robot in artificial gravity (Tim Bretl and Jacob Kraft)".
 * Add the tag `dp2` (a **lower case** "dp" followed by the number "2"), so viewers can filter by project number.
