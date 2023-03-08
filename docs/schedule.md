@@ -134,6 +134,19 @@ description: What we will do from day to day
 
 * Read the [notes on LQR (details) from class](notes/20230301-lqr-details.pdf).
 
+#### Friday, March 3 (LQR examples)
+
+* Submit [DP2 Draft 2](projects#draft-report-with-results-by-1159pm-on-friday-march-3) by midnight today.
+* Sign up for and take Exam 2 in the CBTF
+
+#### Monday, March 6 (No class)
+
+* Good luck on your exam! I will hold an extra office hour during our normal class time.
+
+#### Wednesday, March 8 (Observer implementation)
+
+* TBD
+
 
 # Examples
 
