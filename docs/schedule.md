@@ -145,7 +145,13 @@ description: What we will do from day to day
 
 #### Wednesday, March 8 (Observer implementation)
 
-* TBD
+* Complete [HW15 in PrairieLearn](https://us.prairielearn.com/pl/course_instance/130996/assessment/2327070).
+
+#### Friday, March 10 (Observer design and analysis)
+
+* Fill out [this form to express group preferences for your third design project](https://forms.illinois.edu/sec/1605289650).
+* Submit all [final deliverables for the second design project](projects#segbot-your-deliverables).
+* Complete [HW16 in PrairieLearn](https://us.prairielearn.com/pl/course_instance/130996/assessment/2327067).
 
 
 # Examples
