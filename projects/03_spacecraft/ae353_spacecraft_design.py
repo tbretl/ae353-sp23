@@ -2,6 +2,7 @@ import xml.etree.ElementTree as ET
 from xml.dom import minidom
 import numpy as np
 from pathlib import Path
+import meshcat
 
 # Minimum distance between the center of wheel pairs
 min_dist_rw_to_rw = np.sqrt(0.5**2 + 0.1**2) + np.sqrt(0.5**2 + 0.1**2) + 0.001
@@ -70,8 +71,10 @@ def add_joint(robot, props):
         'effort': f'{props["limit"]["effort"]}',
         'velocity': f'{props["limit"]["velocity"]}',
     })
-    
-def add_wheels(robot, wheels):
+
+def wheels_are_valid(wheels):
+    valid = True
+
     # Find xyz and rpy of each wheel
     for w in wheels:
         alpha = w['alpha']
@@ -85,7 +88,8 @@ def add_wheels(robot, wheels):
     # Check if wheels are too close to scope
     for i, w in enumerate(wheels):
         if np.linalg.norm(w['xyz'] - scope_xyz) <= min_dist_rw_to_scope:
-            raise Exception(f'RW{i + 1} is too close to scope')
+            print(f'WARNING: RW{i + 1} is too close to scope')
+            valid = False
     
     # Check if wheels are too close to each other
     for i, w_i in enumerate(wheels):
@@ -93,8 +97,15 @@ def add_wheels(robot, wheels):
             if j <= i:
                 continue
             if np.linalg.norm(w_i['xyz'] - w_j['xyz']) <= min_dist_rw_to_rw:
-                raise Exception(f'RW{i + 1} is too close to RW{j + 1}')
+                print(f'WARNING: RW{i + 1} is too close to RW{j + 1}')
+                valid = False
     
+    return valid
+
+def add_wheels(robot, wheels):
+    if not wheels_are_valid(wheels):
+        raise Exception('Invalid placement of reaction wheels')
+
     # Add wheels to URDF
     for i, w in enumerate(wheels):
         add_joint(robot, {
@@ -120,3 +131,73 @@ def create_spacecraft(wheels, urdf='spacecraft.urdf'):
     xmlstr = minidom.parseString(ET.tostring(robot)).toprettyxml(indent="  ")
     with open(Path(f'./urdf/{urdf}'), 'w') as f:
         f.write(xmlstr)
+
+def convert_color(rgba):
+    color = int(rgba[0] * 255) * 256**2 + int(rgba[1] * 255) * 256 + int(rgba[2] * 255)
+    opacity = rgba[3]
+    transparent = opacity != 1.0
+    return {
+        'color': color,
+        'opacity': opacity,
+        'transparent': transparent,
+    }
+
+def create_visualizer():
+    # Create visualizer
+    vis = meshcat.Visualizer()
+
+    # Create spacecraft
+    color = convert_color([0.11372549019607843, 0.34509803921568627, 0.6549019607843137, 1.])
+    vis['spacecraft'].set_object(
+        meshcat.geometry.StlMeshGeometry.from_file(Path('./urdf/spacecraft.stl')),
+        meshcat.geometry.MeshPhongMaterial(
+            color=color['color'],
+            transparent=color['transparent'],
+            opacity=color['opacity'],
+            reflectivity=0.8,
+        )
+    )
+
+    # Create wheels
+    color = convert_color([0.96078431, 0.50980392, 0.11764706, 1.])
+    for i in range(4):
+        vis[f'rw{i + 1}'].set_object(
+            meshcat.geometry.StlMeshGeometry.from_file(Path(f'./urdf/rw{i + 1}.stl')),
+            meshcat.geometry.MeshPhongMaterial(
+                color=color['color'],
+                transparent=color['transparent'],
+                opacity=color['opacity'],
+                reflectivity=0.8,
+            )
+        )
+    
+    # Set camera view
+    vis['/Cameras/default'].set_transform(
+        meshcat.transformations.compose_matrix(
+            angles=[
+                0.,
+                np.deg2rad(-30.),
+                np.deg2rad(60. - 180.),
+            ],
+            translate=[0., 0., 0.],
+        )
+    )
+    vis['/Cameras/default/rotated/<object>'].set_property(
+        'position', [5., 0., 0.],
+    )
+    vis['/Cameras/default/rotated/<object>'].set_property(
+        'fov', 90,
+    )
+    
+    # Return visualizer
+    return vis
+
+def show_wheels(vis, wheels):
+    if not wheels_are_valid(wheels):
+        print('WARNING: Invalid placement of reaction wheels')
+    
+    for i, w in enumerate(wheels):
+        S = np.diag(np.concatenate(([0.5, 0.5, 0.2], [1.0])))
+        T = meshcat.transformations.euler_matrix(*w['rpy'])
+        T[:3, 3] = np.array(w['xyz'])[:3]
+        vis[f'rw{i + 1}'].set_transform(T @ S)
