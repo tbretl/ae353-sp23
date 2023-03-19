@@ -152,6 +152,13 @@ description: What we will do from day to day
 * Fill out [this form to express group preferences for your third design project](https://forms.illinois.edu/sec/1605289650).
 * Submit all [final deliverables for the second design project](projects#segbot-your-deliverables).
 * Complete [HW16 in PrairieLearn](https://us.prairielearn.com/pl/course_instance/130996/assessment/2327067).
+* (Optional) Watch supplementary videos on observer design and analysis:
+    * [What is an observer?](https://mediaspace.illinois.edu/media/t/1_bwsv03zv/292883062)
+    * [Do observers make sense?](https://mediaspace.illinois.edu/media/t/1_xf9cytda/292883062)
+    * [When does an observer work?](https://mediaspace.illinois.edu/media/t/1_ma7mf2v3/292883062)
+    * [How to choose $L$ for an observer?](https://mediaspace.illinois.edu/media/t/1_6kd1vo4k/292883062)
+    * [Do observers break controllers?](https://mediaspace.illinois.edu/media/t/1_93pesfka/292883062)
+    * [When is observer design possible?](https://mediaspace.illinois.edu/media/t/1_rxgahknr/292883062)
 
 
 # Examples
