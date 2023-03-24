@@ -143,6 +143,8 @@ description: What we will do from day to day
 
 * Good luck on your exam! I will hold an extra office hour during our normal class time.
 
+## Part 3 - Observer design
+
 #### Wednesday, March 8 (Observer implementation)
 
 * Complete [HW15 in PrairieLearn](https://us.prairielearn.com/pl/course_instance/130996/assessment/2327070).
@@ -151,6 +153,7 @@ description: What we will do from day to day
 
 * Fill out [this form to express group preferences for your third design project](https://forms.illinois.edu/sec/1605289650).
 * Submit all [final deliverables for the second design project](projects#segbot-your-deliverables).
+* Read the [notes on observers (part 1) from class](notes/20230310-observers-part-1.pdf).
 * Complete [HW16 in PrairieLearn](https://us.prairielearn.com/pl/course_instance/130996/assessment/2327067).
 * (Optional) Watch supplementary videos on observer design and analysis:
     * [What is an observer?](https://mediaspace.illinois.edu/media/t/1_bwsv03zv/292883062)
@@ -159,6 +162,16 @@ description: What we will do from day to day
     * [How to choose $L$ for an observer?](https://mediaspace.illinois.edu/media/t/1_6kd1vo4k/292883062)
     * [Do observers break controllers?](https://mediaspace.illinois.edu/media/t/1_93pesfka/292883062)
     * [When is observer design possible?](https://mediaspace.illinois.edu/media/t/1_rxgahknr/292883062)
+
+#### Monday, March 20 (Third design project)
+
+* Read the [guidelines for the third design project](projects#design-project-3-spacecraft-with-star-tracker).
+* Complete [HW17 in PrairieLearn](https://us.prairielearn.com/pl/course_instance/130996/assessment/2327068).
+
+#### Wednesday, March 22 (More observer design and analysis)
+
+* Read the [notes on observers (part 2) from class](notes/20230322-observers-part-2.pdf).
+* Complete [HW18 in PrairieLearn](https://us.prairielearn.com/pl/course_instance/130996/assessment/2327069).
 
 
 # Examples
