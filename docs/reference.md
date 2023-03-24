@@ -2277,7 +2277,7 @@ when describing a sensor model in state-space form.
 </div>
 
 
-## Optimal Observer Derivation (a.k.a the Kalman Filter, a very famous thing)
+## Optimal observer design
 
 These notes were originally written by T. Bretl and were transcribed for this reference page by S. Bout.
 
