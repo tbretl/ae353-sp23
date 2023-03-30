@@ -173,6 +173,28 @@ description: What we will do from day to day
 * Read the [notes on observers (part 2) from class](notes/20230322-observers-part-2.pdf).
 * Complete [HW18 in PrairieLearn](https://us.prairielearn.com/pl/course_instance/130996/assessment/2327069).
 
+#### Friday, March 24 (Optimal observers, part 1)
+
+* Read the [notes on optimal observers from class](notes/20230324-optimal-observers.pdf).
+
+#### Monday, March 27 (Optimal observers, part 2)
+
+* Read the [notes on optimal observers from class](notes/20230324-optimal-observers.pdf).
+* Complete [HW19 in PrairieLearn](https://us.prairielearn.com/pl/course_instance/130996/assessment/2327071).
+
+#### Wednesday, March 29 (Optimal observers, part 3)
+
+* Read the [notes on optimal observers from class](notes/20230324-optimal-observers.pdf).
+
+#### Friday, March 31 (No class)
+
+* Submit [DP3 Draft 2](projects#draft-report-with-results-by-1159pm-on-friday-march-31) by midnight today.
+* Have fun at EOH! I will hold an extra office hour during our normal class time.
+
+
+
+
+
 
 # Examples
 
