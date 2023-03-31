@@ -15,7 +15,6 @@ class Simulator:
             display=True,
             display_pybullet=False,
             stars=None,
-            shootingstar=True,
             seed=None,
             scope_noise=0.1,
             width=640,
@@ -75,17 +74,16 @@ class Simulator:
         )
 
         # Load shooting star
-        self.shootingstar = shootingstar
-        if self.shootingstar:
-            self.shot_id = self.bullet_client.loadURDF(
-                str(Path('./urdf/shootingstar.urdf')),
-                basePosition=np.array([0., 0., 10.]),
-                baseOrientation=self.bullet_client.getQuaternionFromEuler([0., 0., 0.]),
-                useFixedBase=0,
-                flags=(self.bullet_client.URDF_USE_IMPLICIT_CYLINDER  |
-                       self.bullet_client.URDF_USE_INERTIA_FROM_FILE  )
-            )
-            self.bullet_client.changeDynamics(self.shot_id, -1, linearDamping=0., angularDamping=0.)
+        self.shootingstar = True
+        self.shot_id = self.bullet_client.loadURDF(
+            str(Path('./urdf/shootingstar.urdf')),
+            basePosition=np.array([0., 0., 10.]),
+            baseOrientation=self.bullet_client.getQuaternionFromEuler([0., 0., 0.]),
+            useFixedBase=0,
+            flags=(self.bullet_client.URDF_USE_IMPLICIT_CYLINDER  |
+                    self.bullet_client.URDF_USE_INERTIA_FROM_FILE  )
+        )
+        self.bullet_client.changeDynamics(self.shot_id, -1, linearDamping=0., angularDamping=0.)
         
         # Create a dictionary that maps joint names to joint indices and
         # link names to link indices
@@ -257,6 +255,19 @@ class Simulator:
         )
 
     def place_shootingstar(self):
+        if not self.shootingstar:
+            self.bullet_client.resetBasePositionAndOrientation(
+                self.shot_id,
+                [0., 0., 10.],
+                self.bullet_client.getQuaternionFromEuler([0., 0., 0.]),
+            )
+            self.bullet_client.resetBaseVelocity(
+                self.shot_id,
+                linearVelocity=[0., 0., 0.],
+                angularVelocity=[0., 0., 0.],
+            )
+            return
+
         # Choose the position and velocity of shooting star so that
         # it will hit one of the reaction wheels
         link_states = self.bullet_client.getLinkStates(self.robot_id, self.joint_ids)
@@ -281,7 +292,8 @@ class Simulator:
             self,
             orientation=None,
             angular_velocity=None,
-            scope_noise=None
+            scope_noise=None,
+            space_debris=True,
         ):
         # Scope noise (if specified)
         if scope_noise is not None:
@@ -327,8 +339,8 @@ class Simulator:
                             angularVelocity=angvel)
 
         # Shooting star position, orientation, and velocity
-        if self.shootingstar:
-            self.place_shootingstar()
+        self.shootingstar = space_debris
+        self.place_shootingstar()
         
         # Update camera and display
         self._update_camera()
@@ -492,11 +504,10 @@ class Simulator:
             self.bullet_client.WORLD_FRAME,
         )
 
-        # Reset shooting star (if necessary)
-        if self.shootingstar:
-            pos, ori = self.bullet_client.getBasePositionAndOrientation(self.shot_id)
-            if np.linalg.norm(np.array(pos)) > 15:
-                self.place_shootingstar()
+        # Reset shooting star
+        pos, ori = self.bullet_client.getBasePositionAndOrientation(self.shot_id)
+        if np.linalg.norm(np.array(pos)) > 15:
+            self.place_shootingstar()
 
         # Log data
         self.data['t'].append(self.t)
@@ -681,21 +692,20 @@ class Simulator:
             )
 
         # Add shooting star
-        if self.shootingstar:
-            s = self.bullet_client.getVisualShapeData(self.shot_id)[0]
-            if s[1] != -1:
-                raise Exception('bad shooting star link id')
-            radius = s[3][0]
-            color = self._convert_color(s[7])
-            self.vis['shooting_star'].set_object(
-                meshcat.geometry.Sphere(radius),
-                meshcat.geometry.MeshPhongMaterial(
-                    color=color['color'],
-                    transparent=color['transparent'],
-                    opacity=color['opacity'],
-                    reflectivity=0.8,
-                )
+        s = self.bullet_client.getVisualShapeData(self.shot_id)[0]
+        if s[1] != -1:
+            raise Exception('bad shooting star link id')
+        radius = s[3][0]
+        color = self._convert_color(s[7])
+        self.vis['shooting_star'].set_object(
+            meshcat.geometry.Sphere(radius),
+            meshcat.geometry.MeshPhongMaterial(
+                color=color['color'],
+                transparent=color['transparent'],
+                opacity=color['opacity'],
+                reflectivity=0.8,
             )
+        )
         
         # Turn off grid
         self.vis['/Grid'].set_property('visible', False)
@@ -742,11 +752,10 @@ class Simulator:
             )
         
         # Set pose of shooting star
-        if self.shootingstar:
-            pos, ori = self.bullet_client.getBasePositionAndOrientation(self.shot_id)
-            self.vis['shooting_star'].set_transform(
-                T_world_in_cam @ meshcat.transformations.translation_matrix(pos),
-            )
+        pos, ori = self.bullet_client.getBasePositionAndOrientation(self.shot_id)
+        self.vis['shooting_star'].set_transform(
+            T_world_in_cam @ meshcat.transformations.translation_matrix(pos),
+        )
 
     def meshcat_camera(self):
         self.vis['/Cameras/default'].set_transform(
