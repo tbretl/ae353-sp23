@@ -221,8 +221,9 @@ description: What we will do from day to day
 
 * Complete [HW21 in PrairieLearn](https://us.prairielearn.com/pl/course_instance/130996/assessment/2327072).
 
-#### Monday, April 17 (Frequency response, part 3)
+#### Monday, April 17 (Transfer function)
 
+* Read the [notes on transfer functions from class](notes/20230417-transfer-function.pdf)
 * Complete [HW22 in PrairieLearn](https://us.prairielearn.com/pl/course_instance/130996/assessment/2327073).
 * (Optional) Watch supplementary videos on frequency response:
     * [What is the transfer function? What is the frequency response? Why are these things important?](https://mediaspace.illinois.edu/media/t/1_oljuanym/292883062)
