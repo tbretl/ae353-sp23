@@ -185,15 +185,51 @@ description: What we will do from day to day
 #### Wednesday, March 29 (Optimal observers, part 3)
 
 * Read the [notes on optimal observers from class](notes/20230324-optimal-observers.pdf).
+* (Optional) Watch supplementary videos on optimal observers:
+    * [What is an optimal observer?](https://mediaspace.illinois.edu/media/t/1_m5ku4a2i/292883062)
+    * [What problem is solved to produce an optimal observer?](https://mediaspace.illinois.edu/media/t/1_cvfqo0i0/292883062)
+    * [Do optimal observers make any sense at all?](https://mediaspace.illinois.edu/media/t/1_axx6h2yg/292883062)
 
 #### Friday, March 31 (No class)
 
 * Submit [DP3 Draft 2](projects#draft-report-with-results-by-1159pm-on-friday-march-31) by midnight today.
 * Have fun at EOH! I will hold an extra office hour during our normal class time.
 
+## Part 4 - Tracking and frequency response
 
+#### Monday, April 3 (Random number generation)
 
+* See [example code]({{ site.github.repository_url }}/tree/main/examples/20230403).
 
+#### Wednesday, April 5 (Tracking, part 1)
+
+* See [example code]({{ site.github.repository_url }}/tree/main/examples/20230405).
+
+#### Friday, April 7 (Tracking, part 2)
+
+* See [example code]({{ site.github.repository_url }}/tree/main/examples/20230407).
+
+#### Monday, April 10 (Fourth design project)
+
+* Read the [guidelines for the third design project](projects#design-project-4-drone).
+
+#### Wednesday, April 12 (Frequency response, part 1)
+
+* Complete [HW20 in PrairieLearn](https://us.prairielearn.com/pl/course_instance/130996/assessment/2341242).
+
+#### Friday, April 14 (Frequency response, part 2)
+
+* Complete [HW21 in PrairieLearn](https://us.prairielearn.com/pl/course_instance/130996/assessment/2327072).
+
+#### Monday, April 17 (Frequency response, part 3)
+
+* Complete [HW22 in PrairieLearn](https://us.prairielearn.com/pl/course_instance/130996/assessment/2327073).
+* (Optional) Watch supplementary videos on frequency response:
+    * [What is the transfer function? What is the frequency response? Why are these things important?](https://mediaspace.illinois.edu/media/t/1_oljuanym/292883062)
+    * [What is the solution to a system with input?](https://mediaspace.illinois.edu/media/t/0_29rmp7ql/292883062)
+    * [What is a complex number?](https://mediaspace.illinois.edu/media/t/1_h4sfjfwc/292883062)
+    * [How do I derive the transfer function?](https://mediaspace.illinois.edu/media/t/1_xzp809m6/292883062)
+    * [How do I derive the frequency response?](https://mediaspace.illinois.edu/media/t/1_xmptsbkg/292883062)
 
 
 # Examples
