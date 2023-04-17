@@ -3110,8 +3110,88 @@ if and only if all eigenvalues of $A - BK$ and all eigenvalues of $A - LC$ have 
 </div>
 
 
+#### Tracking more than one element of the state
+
+Our discussion of reference tracking with [full state feedback](#reference-tracking-with-full-state-feedback) and with [partial state feedback](#reference-tracking-with-partial-state-feedback) has assumed that we want to track desired values of exactly one element $m_i$ of the nonlinear state $m$. All of this generalizes immediately to the case where we want to track desired values of more than one element of $m$.
+
+In particular, suppose there are *two* indices $i, j \in \\{1, \dotsc, \ell\\}$ that satisfy
+
+$$
+f(m + e_i r_i + e_j r_j, n) = f(m, n) \quad\text{for any}\quad r_i, r_j \in \mathbb{R}
+$$
+
+and, in the case of partial state feedback, that also satisfy
+
+$$
+g(m + e_i r_i + e_j r_j, n) = g_{0i} r_i + g_{0j} r_j + g(m, n) \quad\text{for any}\quad r_i, r_j \in \mathbb{R}
+$$
+
+for constant vectors $g_{0i}$ and $g_{0j}$. Then, choosing
+
+$$
+x_\text{des} = e_ir_i + e_jr_j
+$$
+
+would produce the same results that were derived previously.
 
 
+#### Choosing the desired state to keep errors small
+
+Our proof that tracking "works" relies largely on having shown that our state-space model is just as accurate near $(m_e + e_i r, n_e)$ as it is near the equilibrium point $(m_e, n_e)$. Equivalently, it relies on having shown that this model is just as accurate near $x = x_\text{des}$ as it is near $x = 0$.
+
+Despite this fact, it is still important to keep the state error
+
+$$x - x_\text{des}$$
+
+small. The reason is that the input is proportional to the error — for full state feedback as
+
+$$u = - K (x - x_\text{des})$$
+
+and for partial state feedback as
+
+$$u = - K (\widehat{x} - x_\text{des}).$$
+
+So, if error is large, the input may exceed bounds (e.g., limits on actuator torque). Since our state-space model does not include these bounds, it may be inaccurate when inputs are large.
+
+As a consequence, it is important in practice to choose $x_\text{des}$ so that the state error
+
+$$x - x_\text{des}$$
+
+remains small. Here is one common way to do this:
+
+<div class="alert alert-warning">
+<p><strong>Choosing $x_\text{des}$ in the case of full state feedback</strong></p>
+
+Suppose $e_i r_\text{goal}$ is the state you actually want to achieve. Then, for some $e_\text{max} > 0$, choose
+
+$$x_\text{des} = e_i r$$
+
+where
+
+$$
+r =
+\begin{cases}
+e_i^T x + \left(\dfrac{r_\text{goal} - e_i^Tx}{\|r_\text{goal} - e_i^Tx\|} \right) & \text{if } \| r_\text{goal} - e_i^Tx \| > e_\text{max}, \\
+r_\text{goal} & \text{otherwise.}
+\end{cases}
+$$
 
 
+<p><strong>Choosing $x_\text{des}$ in the case of partial state feedback</strong></p>
 
+Suppose $e_i r_\text{goal}$ is the state you actually want to achieve. Then, for some $e_\text{max} > 0$, choose
+
+$$x_\text{des} = e_i r$$
+
+where
+
+$$
+r =
+\begin{cases}
+e_i^T \widehat{x} + \left(\dfrac{r_\text{goal} - e_i^T\widehat{x}}{\|r_\text{goal} - e_i^T\widehat{x}\|} \right) & \text{if } \| r_\text{goal} - e_i^T\widehat{x} \| > e_\text{max}, \\
+r_\text{goal} & \text{otherwise.}
+\end{cases}
+$$
+
+
+</div>
