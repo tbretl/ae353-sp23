@@ -36,9 +36,10 @@ class Simulator:
         # Time step
         self.dt = 0.04
 
-        # Whether or not to error on controller print or timeout
+        # Whether or not to error on controller print, timeout, or inactivity
         self.error_on_print = True
         self.error_on_timeout = True
+        self.error_on_inactive = True
         self.max_controller_run_time=1e-2
         self.max_controller_reset_time=1e0
         self.max_controller_init_time=1e0
@@ -136,9 +137,10 @@ class Simulator:
         #
         self.bounds_d = 25.
 
-    def set_rules(self, error_on_print=True, error_on_timeout=True):
+    def set_rules(self, error_on_print=True, error_on_timeout=True, error_on_inactive=True):
         self.error_on_print = error_on_print
         self.error_on_timeout = error_on_timeout
+        self.error_on_inactive = error_on_inactive
 
     def clear_drones(self):
         self.meshcat_clear_drones()
@@ -969,7 +971,8 @@ class Simulator:
                     drone,
                 )
             except Exception as err:
-                print(f'\n==========\nerror on run of drone {drone["name"]} (turning it off):\n==========\n{traceback.format_exc()}==========\n')
+                if print_debug:
+                    print(f'\n==========\nerror on run of drone {drone["name"]} (turning it off):\n==========\n{traceback.format_exc()}==========\n')
                 drone['running'] = False
                 continue
 
@@ -1030,19 +1033,22 @@ class Simulator:
                 continue
             
             # check for inactivity
-            if len(data['t']) > self.activity_n:
-                dx = np.max(data['p_x'][-self.activity_n:]) - np.min(data['p_x'][-self.activity_n:])
-                dy = np.max(data['p_y'][-self.activity_n:]) - np.min(data['p_y'][-self.activity_n:])
-                dz = np.max(data['p_z'][-self.activity_n:]) - np.min(data['p_z'][-self.activity_n:])
-                d = np.max([dx, dy, dz])
-                if d < self.activity_d:
-                    print(f'\n==========\ndrone {drone["name"]} is inactive (turning it off)\n==========\n')
-                    drone['running'] = False
-                    continue
+            if self.error_on_inactive:
+                if len(data['t']) > self.activity_n:
+                    dx = np.max(data['p_x'][-self.activity_n:]) - np.min(data['p_x'][-self.activity_n:])
+                    dy = np.max(data['p_y'][-self.activity_n:]) - np.min(data['p_y'][-self.activity_n:])
+                    dz = np.max(data['p_z'][-self.activity_n:]) - np.min(data['p_z'][-self.activity_n:])
+                    d = np.max([dx, dy, dz])
+                    if d < self.activity_d:
+                        if print_debug:
+                            print(f'\n==========\ndrone {drone["name"]} is inactive (turning it off)\n==========\n')
+                        drone['running'] = False
+                        continue
             
             # check for out-of-bounds
             if self._drone_is_out_of_bounds(pos):
-                print(f'\n==========\ndrone {drone["name"]} is out of bounds (turning it off)\n==========\n')
+                if print_debug:
+                    print(f'\n==========\ndrone {drone["name"]} is out of bounds (turning it off)\n==========\n')
                 drone['running'] = False
                 continue
 
