@@ -231,6 +231,16 @@ description: What we will do from day to day
     * [What is a complex number?](https://mediaspace.illinois.edu/media/t/1_h4sfjfwc/292883062)
     * [How do I derive the transfer function?](https://mediaspace.illinois.edu/media/t/1_xzp809m6/292883062)
     * [How do I derive the frequency response?](https://mediaspace.illinois.edu/media/t/1_xmptsbkg/292883062)
+* See [example code]({{ site.github.repository_url }}/tree/main/examples/20230417).
+
+#### Wednesday, April 19 (Bode plot)
+
+* Read the [notes on Bode plots from class](notes/20230419-bode-plot.pdf).
+* See [example code]({{ site.github.repository_url }}/tree/main/examples/20230419).
+
+#### Friday, April 21 (Bandwidth + Computation time)
+
+* See [example code]({{ site.github.repository_url }}/tree/main/examples/20230421).
 
 
 # Examples
