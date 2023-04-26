@@ -172,7 +172,7 @@ You must, of course, replace `netid` with your own netid. Please use all lowerca
 
 * It must not raise an exception (i.e., throw an error).
 * It must not print anything to `stdout` (i.e., run `print` statements).
-* It must not exceed limits on computation time (5 seconds for module load, 1 second for `__init__`, 1 second for `reset`, and `1e-3` seconds for `run`).
+* It must not exceed limits on computation time (5 seconds for module load, 1 second for `__init__`, 1 second for `reset`, and `5e-3` seconds for `run`).
 
 Your submission will *not* be assessed based on whether or not it wins the race.
 
