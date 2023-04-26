@@ -242,6 +242,15 @@ description: What we will do from day to day
 
 * See [example code]({{ site.github.repository_url }}/tree/main/examples/20230421).
 
+#### Monday, April 24 (No class)
+
+* Good luck on Exam 4!
+
+#### Wednesday, April 26 (Collision avoidance)
+
+* Read the [notes on collision avoidance from class](notes/20230426-collision-avoidance.pdf)
+* See [example code]({{ site.github.repository_url }}/tree/main/examples/20230426).
+
 
 # Examples
 
