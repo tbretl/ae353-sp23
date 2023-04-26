@@ -159,7 +159,7 @@ Upload it to the [**DP4 Draft 2** group assignment on Canvas](https://canvas.ill
 
 ##### Contest entry (by 5:00pm on Tuesday, May 2)
 
-There will be an opportunity to race with your friends in a friendly contest on the last day of class (Wednesday, May 3). The [same project code]({{ site.github.repository_url }}/tree/main/projects/04_drone) that you are using for the purpose of control design and simulation will be used to run each race in this contest. To enter the race, your team must upload exactly two files to [the "DP04-Race-Submissions" Box folder]():
+There will be an opportunity to race with your friends in a friendly contest on the last day of class (Wednesday, May 3). The [same project code]({{ site.github.repository_url }}/tree/main/projects/04_drone) that you are using for the purpose of control design and simulation will be used to run each race in this contest. To enter the race, your team must upload exactly two files to [the "DP04-Race-Submissions" Box folder](https://uofi.box.com/s/0y25a0qrvq4tunphedh80b1ilewc0nb1):
 
 * `netid.py`, with a completely self-contained implementation of your control design, in the format specified by [04_drone/students/template.py]({{ site.github.repository_url }}/tree/main/projects/04_drone/students/template.py).
 * `netid.png`, with an image (keep it professional) that can be used to distinguish your drone from others.
