@@ -665,6 +665,8 @@ class Simulator:
             drone['finish_time'] = None
             # Still running
             drone['running'] = True
+            # Error messages
+            drone['error'] = None
             # Number of run time violations
             drone['num_run_time_violations'] = 0
             
@@ -701,6 +703,7 @@ class Simulator:
             except Exception as err:
                 print(f'\n==========\nerror on reset of drone {drone["name"]} (turning it off):\n==========\n{traceback.format_exc()}==========\n')
                 drone['running'] = False
+                drone['error'] = traceback.format_exc()
                 continue
 
         # Update camera and display
@@ -974,6 +977,7 @@ class Simulator:
                 if print_debug:
                     print(f'\n==========\nerror on run of drone {drone["name"]} (turning it off):\n==========\n{traceback.format_exc()}==========\n')
                 drone['running'] = False
+                drone['error'] = traceback.format_exc()
                 continue
 
             # apply rotor forces
@@ -1030,6 +1034,7 @@ class Simulator:
             except Exception as err:
                 print(f'\n==========\nerror logging data for drone {drone["name"]} (turning it off):\n==========\n{traceback.format_exc()}==========\n')
                 drone['running'] = False
+                drone['error'] = traceback.format_exc()
                 continue
             
             # check for inactivity
@@ -1043,6 +1048,7 @@ class Simulator:
                         if print_debug:
                             print(f'\n==========\ndrone {drone["name"]} is inactive (turning it off)\n==========\n')
                         drone['running'] = False
+                        drone['error'] = 'Inactive.'
                         continue
             
             # check for out-of-bounds
@@ -1050,6 +1056,7 @@ class Simulator:
                 if print_debug:
                     print(f'\n==========\ndrone {drone["name"]} is out of bounds (turning it off)\n==========\n')
                 drone['running'] = False
+                drone['error'] = 'Out of bounds.'
                 continue
 
 
